@@ -1,16 +1,23 @@
 import "@/assets/styles/global.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "PropertyPulse | Find the perfect rental.",
   description: "Find your dream rental property.",
-  keywords: 'rental, find rentals, find properties'
+  keywords: "rental, find rentals, find properties",
 };
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PropertyPulse</title>
+      </head>
       <body>
-        <div>{children}</div>
+        <Navbar />
+        <main>{children}</main>
       </body>
     </html>
   );
