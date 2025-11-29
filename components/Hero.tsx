@@ -21,7 +21,7 @@ const Hero = () => {
             <input
               type="text"
               id="location"
-              className="w-full px-4 py-3 rounded-lg bg-white font-light text-sm text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-3 rounded-lg bg-white font-light text-base text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
               placeholder="Enter Location (City, State, Zip, etc)"
             />
           </div>
@@ -33,7 +33,7 @@ const Hero = () => {
             </label>
             <select
               id="property-type"
-              className="w-full px-4 py-3 rounded-lg bg-white text-gray-800 text-sm font-light focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full px-4 py-3 rounded-lg bg-white text-gray-800 text-base font-light focus:outline-none focus:ring focus:ring-blue-500"
             >
               <option value="All">All</option>
               <option value="Apartment">Apartment</option>
@@ -47,7 +47,7 @@ const Hero = () => {
             </select>
           </div>
 
-          <button className="text-white text-sm font-bold md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-7 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500">
+          <button className="text-white text-base font-bold md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-7 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500">
             Search
           </button>
         </form>

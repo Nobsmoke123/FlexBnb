@@ -12,7 +12,9 @@ const InfoBox: React.FC<InfoBoxType> = ({
       <h2 className={`text-xl font-semibold tracking-wide ${textColor}`}>
         {heading}
       </h2>
-      <p className={`mt-2 mb-4 text-sm font-light ${textColor}`}>{children}</p>
+      <p className={`mt-2 mb-4 text-base font-light ${textColor}`}>
+        {children}
+      </p>
       <a
         href={link}
         className={`${buttonBackgroundColor} inline-block text-white font-light text-sm rounded-lg px-4 py-2 hover:bg-gray-700`}
