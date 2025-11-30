@@ -1,7 +1,5 @@
 import PropertyCard from "@/components/PropertyCard";
 import properties from "@/properties.json";
-import Image from "next/image";
-import { FaBath, FaBed, FaHome, FaMoneyBill } from "react-icons/fa";
 
 const PropertiesPage = () => {
   return (

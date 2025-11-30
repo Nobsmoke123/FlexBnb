@@ -1,7 +1,13 @@
 import type { PropertyCard } from "@/app/types/PropertyCard";
 import Image from "next/image";
 import Link from "next/link";
-import { FaBath, FaBed, FaHome, FaMoneyBill } from "react-icons/fa";
+import {
+  FaBath,
+  FaBed,
+  FaHome,
+  FaMapMarker,
+  FaMoneyBill,
+} from "react-icons/fa";
 
 const PropertyCard: React.FC<{ property: PropertyCard }> = ({ property }) => {
   const getRateDisplay = () => {
@@ -28,10 +34,14 @@ const PropertyCard: React.FC<{ property: PropertyCard }> = ({ property }) => {
       />
       <div className="p-4">
         <div className="text-left md:text-center lg:text-left mb-6">
-          <div className="text-gray-600">{property.type}</div>
-          <h3 className="text-xl font-bold">{property.name}</h3>
+          <div className="text-zinc-900 text-base font-extralight">
+            {property.type}
+          </div>
+          <h3 className="text-xl text-zinc-900 font-semibold">
+            {property.name}
+          </h3>
         </div>
-        <h3 className="absolute top-[10px] right-[10px] bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right">
+        <h3 className="text-sm absolute top-[10px] right-[10px] bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right">
           ${getRateDisplay()}
         </h3>
         <div className="flex justify-between text-gray-500 mb-4">
@@ -83,9 +93,9 @@ const PropertyCard: React.FC<{ property: PropertyCard }> = ({ property }) => {
         <div className="border border-gray-100 mb-5"></div>
 
         <div className="flex flex-col lg:flex-row justify-between mb-4">
-          <div className="flex align-middle gap-2 mb-4 lg:mb-0">
-            <i className="fa-solid fa-location-dot text-lg text-orange-700"></i>
-            <span className="text-orange-700">
+          <div className="flex align-middle items-center gap-2 mb-4 lg:mb-0">
+            <FaMapMarker className="text-orange-700" />
+            <span className="text-zinc-700 text-base font-extralight">
               {property.location.city}
               {` `} {property.location.state}
             </span>
