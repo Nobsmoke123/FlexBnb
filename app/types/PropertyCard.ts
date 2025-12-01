@@ -1,6 +1,8 @@
+import { Types } from "mongoose";
+
 export type PropertyCard = {
-  _id: string;
-  owner: string;
+  _id: Types.ObjectId | string;
+  owner: Types.ObjectId | string;
   name: string;
   type: string;
   description: string;

@@ -1,9 +1,12 @@
-import { Schema, model, Types } from "mongoose";
+import { Schema, model, models, Types } from "mongoose";
 
-export interface IProperty {
+export interface Property {
+  _id: Types.ObjectId;
   owner: Types.ObjectId;
   name: string;
   type: string;
+  beds: number;
+  baths: number;
   description: string;
   location: {
     street: string;
@@ -12,7 +15,7 @@ export interface IProperty {
     zipcode: string;
   };
   square_feet: number;
-  rate: {
+  rates: {
     nightly: number;
     weekly: number;
     monthly: number;
@@ -25,9 +28,11 @@ export interface IProperty {
   };
   images: string[];
   is_featured: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
 
-const propertySchema = new Schema<IProperty>({
+const propertySchema = new Schema<Property>({
   owner: {
     type: Schema.Types.ObjectId,
     ref: "User",
@@ -42,6 +47,16 @@ const propertySchema = new Schema<IProperty>({
   type: {
     type: String,
     required: [true, "Property type is required."],
+  },
+
+  beds: {
+    type: Number,
+    required: [true, "Number of beds is required."],
+  },
+
+  baths: {
+    type: Number,
+    required: [true, "Number of baths is required"],
   },
 
   description: {
@@ -81,7 +96,7 @@ const propertySchema = new Schema<IProperty>({
     },
   ],
 
-  rate: {
+  rates: {
     nightly: {
       type: Number,
     },
@@ -115,6 +130,7 @@ const propertySchema = new Schema<IProperty>({
   },
 });
 
-const PropertyModel = model<IProperty>("Property", propertySchema);
+const PropertyModel =
+  models.property || model<Property>("Property", propertySchema);
 
 export default PropertyModel;

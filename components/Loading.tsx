@@ -1,5 +1,3 @@
-"use client";
-
 import { GridLoader } from "react-spinners";
 
 const Loading = () => {

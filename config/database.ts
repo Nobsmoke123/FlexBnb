@@ -5,11 +5,17 @@ let connected = false;
 const connectDB = async () => {
   try {
     // if database is already connected, don't connect again
-    if (!connected) {
+    if (connected) {
       console.log("The database is already connected.");
       return;
     }
-    await mongoose.connect(process.env.MONGODB_URI!);
+
+    await mongoose.connect(process.env.MONGODB_URI!, {
+      bufferCommands: false,
+    });
+
+    connected = true;
+
     console.log("MongoDB connected!");
   } catch (error) {
     console.error(error);
