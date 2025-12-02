@@ -1,4 +1,4 @@
-import { Schema, model, models, Types } from "mongoose";
+import { Schema, model, models, Types, Model } from "mongoose";
 
 export interface Property {
   _id: Types.ObjectId;
@@ -32,7 +32,7 @@ export interface Property {
   updatedAt: string;
 }
 
-const propertySchema = new Schema<Property>({
+const propertySchema = new Schema<Property, Model<Property>>({
   owner: {
     type: Schema.Types.ObjectId,
     ref: "User",
@@ -131,6 +131,7 @@ const propertySchema = new Schema<Property>({
 });
 
 const PropertyModel =
-  models.property || model<Property>("Property", propertySchema);
+  (models.Property as Model<Property>) ||
+  model<Property>("Property", propertySchema);
 
 export default PropertyModel;

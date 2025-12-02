@@ -18,6 +18,7 @@
         "name": "next"
       }
     ],
+    "typeRoots": ["./app/types", "./node_modules/@types"],
     "paths": {
       "@/*": ["./*"]
     }

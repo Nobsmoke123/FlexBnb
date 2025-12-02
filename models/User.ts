@@ -1,4 +1,4 @@
-import { Schema, model, models, Types } from "mongoose";
+import { Schema, model, models, Types, Model } from "mongoose";
 
 export interface User {
   _id: Types.ObjectId;
@@ -10,7 +10,7 @@ export interface User {
   updatedAt: string;
 }
 
-const userSchema = new Schema<User>(
+const userSchema = new Schema<User, Model<User>>(
   {
     email: {
       type: String,
@@ -40,6 +40,7 @@ const userSchema = new Schema<User>(
   }
 );
 
-const UserModel = models.user || model<User>("User", userSchema);
+const UserModel =
+  (models.User as Model<User>) || model<User>("User", userSchema);
 
 export default UserModel;
