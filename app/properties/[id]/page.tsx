@@ -1,5 +1,7 @@
 "use client";
 
+import { amenitiesIconMapper } from "@/app/types/AmenitiesIconMapper";
+import { amenitiesMapper, AmenityKey } from "@/app/types/PropertyAddFormTypes";
 import Loading from "@/components/Loading";
 import PropertyHeaderImage from "@/components/PropertyHeaderImage";
 import { Property } from "@/models/Property";
@@ -177,8 +179,15 @@ const PropertyPage = () => {
                           className="text-base flex gap-2 items-center"
                           key={`${amenity}-${index}`}
                         >
-                          <FaCheck className="text-green-800" />
-                          <span className="text-sm">{amenity}</span>
+                          {/* <FaCheck className="text-green-800" /> */}
+                          {/* {amenity} */}
+                          {amenitiesIconMapper[amenity as AmenityKey]?.icon ?? (
+                            <FaCheck className="text-green-800" />
+                          )}
+                          <span className="text-sm">
+                            {amenitiesMapper[amenity as AmenityKey]?.text ??
+                              amenity}
+                          </span>
                         </li>
                       )
                     )}

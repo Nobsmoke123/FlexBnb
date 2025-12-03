@@ -86,6 +86,31 @@ export type PropertyAddForm = {
       value: boolean;
       text: string;
     };
+
+    amenity_mountain_view: {
+      value: false;
+      text: string;
+    };
+
+    amenity_hiking_trails_access: {
+      value: false;
+      text: string;
+    };
+
+    amenity_outdoor_grill_bbq: {
+      value: false;
+      text: string;
+    };
+
+    amenity_high_speed_internet: {
+      value: false;
+      text: string;
+    };
+
+    amenity_fireplace: {
+      value: false;
+      text: string;
+    };
   };
   rates: {
     weekly: number;
@@ -116,6 +141,14 @@ const amenities = {
   amenity_balcony_patio: false,
   amenity_smart_tv: false,
   amenity_coffee_maker: false,
+  amenity_mountain_view: false,
+  amenity_hiking_trails_access: false,
+  amenity_outdoor_grill_bbq: false,
+  amenity_high_speed_internet: false,
+  amenity_fireplace: false,
+  amenity_beach_access: false,
+  amenity_pet_friendly: false,
+  amenity_ski_equipment_storage: false,
 } as const;
 
 export type AmenityKey = keyof typeof amenities;
@@ -194,6 +227,45 @@ export const PropertyAddFormBlankState = {
       value: false,
       text: "amenity_coffee_maker",
     },
+
+    amenity_mountain_view: {
+      value: false,
+      text: "amenity_mountain_view",
+    },
+
+    amenity_hiking_trails_access: {
+      value: false,
+      text: "amenity_hiking_trails_access",
+    },
+
+    amenity_outdoor_grill_bbq: {
+      value: false,
+      text: "amenity_outdoor_grill_bbq",
+    },
+
+    amenity_high_speed_internet: {
+      value: false,
+      text: "amenity_high_speed_internet",
+    },
+
+    amenity_fireplace: {
+      value: false,
+      text: "amenity_fireplace",
+    },
+    amenity_beach_access: {
+      value: false,
+      text: "amenity_beach_access",
+    },
+
+    amenity_pet_friendly: {
+      value: false,
+      text: "amenity_pet_friendly",
+    },
+
+    amenity_ski_equipment_storage: {
+      value: false,
+      text: "amenity_ski_equipment_storage",
+    },
   },
   rates: {
     weekly: 100,
@@ -253,5 +325,36 @@ export const amenitiesMapper: Record<AmenityKey, Record<string, string>> = {
   },
   amenity_coffee_maker: {
     text: "Coffee Maker",
+  },
+  amenity_mountain_view: {
+    text: "Mountain View",
+  },
+
+  amenity_hiking_trails_access: {
+    text: "Hiking Trails Access",
+  },
+
+  amenity_outdoor_grill_bbq: {
+    text: "Outdoor Grill/BBQ",
+  },
+
+  amenity_high_speed_internet: {
+    text: "High-Speed Internet",
+  },
+
+  amenity_fireplace: {
+    text: "Fireplace",
+  },
+
+  amenity_beach_access: {
+    text: "Beach Access",
+  },
+
+  amenity_pet_friendly: {
+    text: "Pet-Friendly",
+  },
+
+  amenity_ski_equipment_storage: {
+    text: "Ski Equipment Storage",
   },
 } as const;
