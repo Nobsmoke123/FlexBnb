@@ -181,8 +181,8 @@ const Navbar = () => {
                     <span className="sr-only">Open user menu</span>
                     <Image
                       className="h-8 w-8 rounded-full"
-                      src={profileDefault}
-                      alt=""
+                      src={session.user.image! ?? profileDefault}
+                      alt="profile-image"
                       width={40}
                       height={40}
                     />
@@ -205,6 +205,7 @@ const Navbar = () => {
                       role="menuitem"
                       tabIndex={-1}
                       id="user-menu-item-0"
+                      onClick={() => setIsProfileMenuOpen(false)}
                     >
                       Your Profile
                     </Link>
@@ -214,6 +215,7 @@ const Navbar = () => {
                       role="menuitem"
                       tabIndex={-1}
                       id="user-menu-item-2"
+                      onClick={() => setIsProfileMenuOpen(false)}
                     >
                       Saved Properties
                     </Link>
@@ -221,6 +223,10 @@ const Navbar = () => {
                       className="block px-4 py-2 text-sm text-gray-700"
                       role="menuitem"
                       tabIndex={-1}
+                      onClick={() => {
+                        setIsProfileMenuOpen(false);
+                        signOut({ redirect: true });
+                      }}
                       id="user-menu-item-2"
                     >
                       Sign Out
@@ -250,6 +256,7 @@ const Navbar = () => {
               className={`${
                 pathname === "/properties" ? "bg-black" : ""
               } text-gray-300 hover:text-white block rounded-md px-3 py-3 text-base font-medium`}
+              onClick={() => setIsProfileMenuOpen(false)}
             >
               Properties
             </Link>
@@ -259,6 +266,7 @@ const Navbar = () => {
                 className={`${
                   pathname === "/properties/add" ? "bg-black" : ""
                 } text-gray-300  hover:text-white block rounded-md px-3 py-3 text-base font-medium`}
+                onClick={() => setIsProfileMenuOpen(false)}
               >
                 Add Property
               </Link>
