@@ -1,7 +1,8 @@
 import connectDB from "@/config/database";
 import PropertyModel from "@/models/Property";
-import authOptions from "../auth/[...nextauth]/authOptions";
-import { getServerSession } from "next-auth";
+import { getUserSession } from "../auth/[...nextauth]/getUserSession";
+import { uploadImage } from "@/app/utils/upload";
+import { CloudinaryImageUploadResponse } from "@/app/types/CloudinaryImage";
 
 export const GET = async (_request: Request) => {
   try {
@@ -20,13 +21,13 @@ export const POST = async (request: Request) => {
   try {
     await connectDB();
 
-    const session = await getServerSession(authOptions);
+    const userSession = await getUserSession();
 
-    if (!session) {
+    if (!userSession) {
       return new Response("Unauthorized Request", { status: 401 });
     }
 
-    const userId = session.user.id!;
+    const userId = userSession.id!;
 
     const formData = await request.formData();
     const amenities = formData.getAll("amenities");
@@ -59,19 +60,33 @@ export const POST = async (request: Request) => {
         email: formData.get("seller_info.email")!,
         phone: formData.get("seller_info.phone")!,
       },
-      images: images,
+      images: [] as string[],
     };
 
-    console.log("The propertyData is:");
-    console.log(propertyData);
+    // Upload image(s) to Cloudinary
+    const imageUploadPromises = [];
 
-    // await connectDB();
-    // const property = new PropertyModel({});
-    return new Response(JSON.stringify({ message: "Success" }), {
-      status: 200,
-    });
+    for (const image of images) {
+      imageUploadPromises.push(uploadImage(image));
+    }
+
+    const uploadedImages: CloudinaryImageUploadResponse[] = await Promise.all(
+      imageUploadPromises
+    );
+
+    propertyData.images = uploadedImages.map((image) => image.url);
+
+    await connectDB();
+
+    const property = new PropertyModel(propertyData);
+
+    const result = await property.save();
+
+    return Response.redirect(
+      `${process.env.NEXTAUTH_URL}/properties/${result._id}`
+    );
   } catch (error) {
     console.log(error);
-    return new Response("Error", { status: 500 });
+    return new Response(JSON.stringify(error), { status: 500 });
   }
 };

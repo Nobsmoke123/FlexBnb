@@ -5,7 +5,7 @@ const PropertyHeaderImage: React.FC<{ image: string }> = ({ image }) => {
     <section className="container-xl m-auto">
       <div className="grid grid-cols-1">
         <Image
-          src={`/images/properties/${image}`}
+          src={image.startsWith("http") ? image : `/images/properties/${image}`}
           alt="property-image-header"
           className="object-cover h-[45vh] w-[100vw]"
           width={0}
