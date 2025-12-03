@@ -1,5 +1,4 @@
 import {
-  FaDog,
   FaHiking,
   FaHotTub,
   FaParking,
@@ -22,17 +21,8 @@ import { TbAirConditioning, TbDog } from "react-icons/tb";
 import { CgGym } from "react-icons/cg";
 import { BiSolidWasher } from "react-icons/bi";
 import { FaElevator } from "react-icons/fa6";
-import {
-  GiDogHouse,
-  GiFireplace,
-  GiGuards,
-  GiMountaintop,
-} from "react-icons/gi";
-import {
-  SiAnimalplanet,
-  SiInternetcomputer,
-  SiPetsathome,
-} from "react-icons/si";
+import { GiFireplace, GiGuards, GiMountaintop } from "react-icons/gi";
+import { SiInternetcomputer } from "react-icons/si";
 
 export const amenitiesIconMapper: Record<
   AmenityKey,
@@ -122,7 +112,6 @@ export const amenitiesIconMapper: Record<
     icon: <MdBeachAccess className="text-zinc-800" size={20} />,
   },
 
-  //   <SiPetsathome className="text-zinc-800" />
   amenity_pet_friendly: {
     icon: <TbDog className="text-zinc-800" size={20} />,
   },

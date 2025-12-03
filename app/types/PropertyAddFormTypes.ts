@@ -88,27 +88,42 @@ export type PropertyAddForm = {
     };
 
     amenity_mountain_view: {
-      value: false;
+      value: boolean;
       text: string;
     };
 
     amenity_hiking_trails_access: {
-      value: false;
+      value: boolean;
       text: string;
     };
 
     amenity_outdoor_grill_bbq: {
-      value: false;
+      value: boolean;
       text: string;
     };
 
     amenity_high_speed_internet: {
-      value: false;
+      value: boolean;
       text: string;
     };
 
     amenity_fireplace: {
-      value: false;
+      value: boolean;
+      text: string;
+    };
+
+    amenity_beach_access: {
+      value: boolean;
+      text: string;
+    };
+
+    amenity_pet_friendly: {
+      value: boolean;
+      text: string;
+    };
+
+    amenity_ski_equipment_storage: {
+      value: boolean;
       text: string;
     };
   };
