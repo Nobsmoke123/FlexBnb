@@ -1,27 +1,15 @@
 import connectDB from "@/config/database";
 import PropertyModel from "@/models/Property";
 import { getUserSession } from "@/app/api/auth/[...nextauth]/getUserSession";
-import { uploadImage } from "@/app/utils/upload";
-import { CloudinaryImageUploadResponse } from "@/app/types/CloudinaryImage";
 
-export const GET = async (_request: Request) => {
+export const PUT = async (
+  request: Request,
+  ctx: RouteContext<`/api/properties/[id]/edit`>
+) => {
   try {
     await connectDB();
-    const properties = await PropertyModel.find({});
-    return new Response(JSON.stringify(properties), { status: 200 });
-  } catch (error) {
-    console.log(error);
-    return new Response("Error", {
-      status: 500,
-    });
-  }
-};
-
-export const POST = async (request: Request) => {
-  try {
-    await connectDB();
-
     const userSession = await getUserSession();
+    const { id: propertyId } = (await ctx.params) as { id: string };
 
     if (!userSession) {
       return new Response("Unauthorized Request", { status: 401 });
@@ -31,9 +19,6 @@ export const POST = async (request: Request) => {
 
     const formData = await request.formData();
     const amenities = formData.getAll("amenities");
-    const images = (formData.getAll("images") as File[]).filter(
-      (image) => image.name !== ""
-    );
 
     const propertyData = {
       owner: userId,
@@ -60,29 +45,31 @@ export const POST = async (request: Request) => {
         email: formData.get("seller_info.email")!,
         phone: formData.get("seller_info.phone")!,
       },
-      images: [] as string[],
     };
 
-    // Upload image(s) to Cloudinary
-    const imageUploadPromises = [];
+    const property = await PropertyModel.findOne({
+      _id: propertyId.toString(),
+    });
 
-    for (const image of images) {
-      imageUploadPromises.push(uploadImage(image));
+    if (!property) {
+      return new Response("Property not found.", { status: 404 });
     }
 
-    const uploadedImages: CloudinaryImageUploadResponse[] = await Promise.all(
-      imageUploadPromises
+    if (property.owner.toString() !== userId.toString()) {
+      return new Response("Unauthorized Action", { status: 403 });
+    }
+
+    const updatedProperty = await PropertyModel.findOneAndUpdate(
+      {
+        _id: propertyId.toString(),
+      },
+      propertyData,
+      {
+        new: true,
+      }
     );
 
-    propertyData.images = uploadedImages.map((image) => image.url);
-
-    const property = new PropertyModel(propertyData);
-
-    const result = await property.save();
-
-    return Response.redirect(
-      `${process.env.NEXTAUTH_URL}/properties/${result._id}`
-    );
+    return new Response(JSON.stringify(updatedProperty), { status: 201 });
   } catch (error) {
     console.log(error);
     return new Response(JSON.stringify(error), { status: 500 });

@@ -2,6 +2,7 @@
 
 import { amenitiesIconMapper } from "@/app/types/AmenitiesIconMapper";
 import { amenitiesMapper, AmenityKey } from "@/app/types/PropertyAddFormTypes";
+import { fetchProperty } from "@/app/utils/requests";
 import Loading from "@/components/Loading";
 import PropertyHeaderImage from "@/components/PropertyHeaderImage";
 import { Property } from "@/models/Property";
@@ -18,21 +19,13 @@ const PropertyPage = () => {
   const [property, setProperty] = useState<Property | null>(null);
 
   useEffect(() => {
-    const fetchProperty = async () => {
+    const fetchPropertyData = async () => {
       try {
         setIsLoading(true);
 
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_DOMAIN}/properties/${id}`
-        );
+        const res = await fetchProperty(id!.toString());
 
-        if (!res.ok) {
-          throw new Error("Failed to fetch properties.");
-        }
-
-        const result = await res.json();
-
-        setProperty((prev) => ({ ...prev, ...result }));
+        setProperty((prev) => ({ ...prev, ...res }));
       } catch (error) {
         console.log(error);
       } finally {
@@ -40,8 +33,9 @@ const PropertyPage = () => {
       }
     };
 
-    fetchProperty();
+    fetchPropertyData();
   }, [id]);
+
   return isLoading ? (
     <Loading />
   ) : (
