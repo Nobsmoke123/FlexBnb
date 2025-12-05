@@ -5,6 +5,8 @@ import { amenitiesMapper, AmenityKey } from "@/app/types/PropertyAddFormTypes";
 import { fetchProperty } from "@/app/utils/requests";
 import Loading from "@/components/Loading";
 import PropertyHeaderImage from "@/components/PropertyHeaderImage";
+import PropertyImages from "@/components/PropertyImages";
+import PropertyMap from "@/components/PropertyMap";
 import { Property } from "@/models/Property";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -57,7 +59,7 @@ const PropertyPage = () => {
         <section className="bg-blue-50">
           <div className="container m-auto py-10 px-4">
             <div className="flex flex-col md:flex-row justify-center items-start w-full gap-6">
-              <main className="grow-2">
+              <main className="md:basis-5xl">
                 <div className="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
                   <h1 className="text-zinc-800 font-extralight mb-4">
                     {property.type}
@@ -188,13 +190,13 @@ const PropertyPage = () => {
                   </ul>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-md mt-6">
-                  <div id="map"></div>
+                <div className="bg-white p-2 rounded-lg shadow-md mt-6">
+                  {!isLoading && <PropertyMap property={property} />}
                 </div>
               </main>
 
               {/* <!-- Sidebar --> */}
-              <aside className="space-y-4">
+              <aside className="md:basis-xs space-y-4">
                 <button className="bg-zinc-700 hover:bg-blue-600 text-white font-extralight w-full py-2 px-4 rounded-md flex items-center justify-center">
                   <i className="fas fa-bookmark mr-2"></i> Bookmark Property
                 </button>
@@ -204,7 +206,7 @@ const PropertyPage = () => {
 
                 {/* <!-- Contact Form --> */}
                 <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl text-zinc-900 font-semibold mb-6">
+                  <h3 className="text-xl text-center text-zinc-900 font-semibold mb-6">
                     Contact Property Manager
                   </h3>
                   <form>
@@ -283,6 +285,7 @@ const PropertyPage = () => {
             </div>
           </div>
         </section>
+        <PropertyImages images={property.images} />
       </>
     )
   );

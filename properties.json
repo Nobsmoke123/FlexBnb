@@ -4,7 +4,7 @@
     "owner": "1",
     "name": "Boston Commons Retreat",
     "type": "Apartment",
-    "description": "This is a beautiful apartment located near the commons. It is a 2 bedroom apartment with a full kitchen and bathroom. It is available for weekly or monthly rentals.",
+    "description": "Boston Commons Retreat offers a peaceful escape in the heart of Boston, combining modern comfort with classic New England charm. Overlooking the historic Boston Commons, this apartment gives guests the perfect blend of urban convenience and serene living. Its warm interior and thoughtful layout make it ideal for both short getaways and longer stays. Inside, guests will find a fully equipped kitchen, spacious bedrooms, and elegant finishes that elevate the living experience. Natural light pours through large windows, highlighting the home’s clean design and cozy atmosphere. Whether you’re cooking, relaxing, or working remotely, every detail supports a calm and enjoyable stay. Step outside and experience Boston at its finest. From scenic walks across the Commons to nearby restaurants, cafés, and cultural landmarks, this apartment places you within walking distance of the city's most treasured spots. Boston Commons Retreat is more than lodging—it's an invitation to live like a local in one of America’s most historic cities.",
     "location": {
       "street": "120 Tremont Street",
       "city": "Boston",
@@ -49,7 +49,7 @@
     "owner": "1",
     "name": "Cozy Downtown Loft",
     "type": "Apartment",
-    "description": "A cozy downtown loft with great city views.",
+    "description": "The Cozy Downtown Loft captures the lively spirit of New York City while offering a warm, intimate space to unwind. Located in the heart of downtown, this loft places you in one of the world’s most iconic urban environments. Its open-concept layout and city-view windows create a modern and uplifting atmosphere. Inside, the space blends functionality with style, featuring contemporary furnishings, soft lighting, and a stylish kitchen. It is designed for solo travelers, couples, or remote workers seeking comfort without sacrificing access to the city’s energy. Every corner of the loft is crafted to maximize space and enhance relaxation. Outside your door, the best of New York awaits. From world-class dining to entertainment, shopping, and transit links, you’ll have seamless access to everything the city offers. The Cozy Downtown Loft is ideal for guests wanting an authentic New York stay with convenience and comfort intertwined.",
     "location": {
       "street": "45 Main Street",
       "city": "New York",
@@ -93,7 +93,7 @@
     "owner": "2",
     "name": "Luxury Condo with a View",
     "type": "Condo",
-    "description": "Experience luxury in this stunning condo with breathtaking views.",
+    "description": "The Cozy Downtown Loft captures the lively spirit of New York City while offering a warm, intimate space to unwind. Located in the heart of downtown, this loft places you in one of the world’s most iconic urban environments. Its open-concept layout and city-view windows create a modern and uplifting atmosphere. Inside, the space blends functionality with style, featuring contemporary furnishings, soft lighting, and a stylish kitchen. It is designed for solo travelers, couples, or remote workers seeking comfort without sacrificing access to the city’s energy. Every corner of the loft is crafted to maximize space and enhance relaxation. Outside your door, the best of New York awaits. From world-class dining to entertainment, shopping, and transit links, you’ll have seamless access to everything the city offers. The Cozy Downtown Loft is ideal for guests wanting an authentic New York stay with convenience and comfort intertwined.",
     "location": {
       "street": "500 Lux Lane",
       "city": "Los Angeles",
@@ -139,7 +139,7 @@
     "owner": "2",
     "name": "Charming Cottage Getaway",
     "type": "Cottage Or Cabin",
-    "description": "Escape to this charming cottage for a peaceful retreat.",
+    "description": "Charming Cottage Getaway is a peaceful hideaway nestled in the calm and scenic surroundings of Austin. Designed for relaxation, the cottage radiates warmth and character, offering a cozy retreat away from the hustle of city life. Its classic design blends rustic touches with modern comfort, making it perfect for couples or solo travelers. Inside, guests will find thoughtful decor, a comfortable living area, and a well-arranged layout that encourages rest and reflection. Whether you're curling up by the fireplace or enjoying morning coffee on the patio, the cottage provides a comforting environment that feels instantly welcoming. Outside, the natural beauty of Austin is right at your doorstep. With countryside views, outdoor grilling areas, and quiet walking paths nearby, the property invites guests to unwind and reconnect with nature. Charming Cottage Getaway is the ideal escape for anyone seeking simplicity, tranquility, and charm.",
     "location": {
       "street": "123 Countryside Lane",
       "city": "Austin",
@@ -173,7 +173,7 @@
     "owner": "3",
     "name": "Modern Downtown Studio",
     "type": "Studio",
-    "description": "Stay in style in this modern downtown studio apartment.",
+    "description": "Modern Downtown Studio brings style, convenience, and sophistication to the heart of Chicago. With its contemporary design and efficient layout, the studio offers a polished living experience for travelers who appreciate modern aesthetics. Large windows brighten the space, creating an inviting atmosphere throughout. Inside, the studio delivers comfort in a compact yet intelligently optimized form. High-end appliances, sleek cabinetry, and elegant décor make the unit feel spacious and luxurious. Whether you're working remotely or resting after a day in the city, every feature supports a seamless lifestyle. Located in downtown Chicago, this studio places you steps away from restaurants, entertainment, and the vibrant energy of the city. With easy access to public transit and major attractions, Modern Downtown Studio is perfect for urban explorers and business travelers alike.",
     "location": {
       "street": "75 Urban Avenue",
       "city": "Chicago",
@@ -209,7 +209,7 @@
     "owner": "3",
     "name": "Seaside Retreat",
     "type": "House",
-    "description": "Escape to this seaside house for a relaxing getaway.",
+    "description": "Seaside Retreat captures the peaceful essence of coastal living in the lively city of Miami. Overlooking ocean views and fresh sea breezes, this spacious house provides an ideal setting for families and groups seeking relaxation. The serene environment makes it a true escape from everyday routines. Inside, the home boasts generous rooms, stylish furnishings, and a design inspired by the ocean itself. The living spaces are perfect for entertaining, enjoying movie nights, or preparing meals in the modern kitchen. Every detail—from décor to layout—creates a soothing atmosphere. Step outdoors to experience the best of seaside living. With direct beach access, a private pool, and an outdoor grill area, the home delivers memorable moments under the Florida sun. Seaside Retreat offers both luxury and tranquility, making it an exceptional coastal getaway.",
     "location": {
       "street": "456 Oceanfront Drive",
       "city": "Miami",
@@ -245,7 +245,7 @@
     "owner": "4",
     "name": "Rustic Cabin in the Woods",
     "type": "Cottage Or Cabin",
-    "description": "Experience nature in this cozy rustic cabin.",
+    "description": "Rustic Cabin in the Woods offers an authentic escape into nature, surrounded by the peaceful forests of Denver. This cabin embraces a warm, earthy aesthetic that provides comfort while connecting guests with the great outdoors. Its charming wood accents and cozy ambiance create an unforgettable stay. Inside, the cabin features an inviting living space complete with a fireplace, comfortable seating, and natural textures throughout. Guests can enjoy quiet evenings, home-cooked meals, and restful nights in a serene environment. It’s the perfect place for travelers who value simplicity and rustic comfort. The property is immersed in nature, offering easy access to hiking trails, scenic views, and fresh mountain air. Whether you're exploring the outdoors or unwinding in peaceful solitude, Rustic Cabin in the Woods gives you an immersive Colorado experience.",
     "location": {
       "street": "789 Forest Lane",
       "city": "Denver",
@@ -280,7 +280,7 @@
     "owner": "5",
     "name": "Ski-In/Ski-Out Chalet",
     "type": "Chalet",
-    "description": "Hit the slopes from this cozy ski-in/ski-out chalet.",
+    "description": "Ski-In/Ski-Out Chalet is a winter lover’s dream located in the snowy, picturesque landscape of Aspen. Designed for guests who value convenience and comfort, the chalet’s direct slope access ensures an unbeatable skiing experience. The warm indoor atmosphere provides the perfect balance to the crisp mountain environment outside. Inside, the chalet features cozy furnishings, a charming fireplace, and a comfortable layout ideal for winter getaways. After a long day on the slopes, guests can unwind in the living area or enjoy meals together in the well-equipped kitchen. The intimate environment is perfect for families, friends, or couples. Surrounded by mountain views and fresh alpine air, the chalet offers easy access to outdoor activities, dining, and local attractions. Ski-In/Ski-Out Chalet brings together adventure and relaxation for a truly memorable stay in Aspen.",
     "location": {
       "street": "321 Mountain Road",
       "city": "Aspen",
@@ -315,7 +315,7 @@
     "owner": "6",
     "name": "Mountain View Retreat",
     "type": "House",
-    "description": "Enjoy stunning mountain views from this spacious retreat.",
+    "description": "Mountain View Retreat lives up to its name with sweeping views of Boulder’s majestic mountain landscape. This spacious home offers a peaceful escape for guests wanting to immerse themselves in Colorado’s natural beauty. Its elevated location provides serenity and stunning scenery throughout the day. The interior features comfortable living spaces, modern amenities, and a design that complements the outdoor surroundings. Whether relaxing in the living area, preparing meals in the kitchen, or resting in the bedrooms, guests will find the home both practical and tranquil. A spacious layout makes it ideal for families and groups. Outdoors, guests have access to hiking trails, scenic spots, and vibrant Boulder attractions. The combination of nature and modern comfort makes Mountain View Retreat a perfect gateway to a truly refreshing mountain experience.",
     "location": {
       "street": "600 Summit Drive",
       "city": "Boulder",
@@ -351,7 +351,7 @@
     "owner": "7",
     "name": "Historic Downtown Loft",
     "type": "Apartment",
-    "description": "Step back in time with a stay in this historic downtown loft.",
+    "description": "Historic Downtown Loft captures the rich history and timeless character of Philadelphia. This unique loft offers guests the opportunity to stay in a building with stories woven into its walls. Its classic architectural elements blend seamlessly with modern upgrades, creating a charming and memorable environment. Inside, the loft is thoughtfully designed to balance comfort with heritage. High ceilings, exposed materials, and stylish décor elevate the space, giving it both personality and warmth. Whether you’re working, relaxing, or exploring the city, the loft offers an inspiring place to call home. Located in the heart of downtown, the property puts iconic landmarks, restaurants, museums, and shops just steps away. Historic Downtown Loft invites guests to live in history while enjoying all the conveniences of a modern urban lifestyle.",
     "location": {
       "street": "123 History Lane",
       "city": "Philadelphia",

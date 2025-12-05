@@ -3,7 +3,10 @@ import { Property } from "@/models/Property";
 export const fetchProperty = async (propertyId: string): Promise<Property> => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_DOMAIN}/properties/${propertyId}`
+      `${process.env.NEXT_PUBLIC_API_DOMAIN}/properties/${propertyId}`,
+      {
+        cache: "no-cache",
+      }
     );
 
     if (!res.ok) {

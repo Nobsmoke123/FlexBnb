@@ -33,6 +33,7 @@ const PropertyCard: React.FC<{ property: PropertyCard }> = ({ property }) => {
         alt="property-image"
         width={0}
         height={0}
+        loading="eager"
         sizes="100vw"
         className="w-full h-auto rounded-t-xl"
       />
