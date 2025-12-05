@@ -21,7 +21,9 @@ const PropertyImages: React.FC<{ images: string[] }> = ({ images }) => {
                 key={index}
                 className={`${
                   images.length === 3 && index === 2
-                }? 'col-span-2' : 'col-span-1`}
+                    ? "col-span-2"
+                    : "col-span-1"
+                }`}
               >
                 <Image
                   src={image}

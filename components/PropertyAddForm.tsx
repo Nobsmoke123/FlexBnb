@@ -96,6 +96,7 @@ const PropertyAddForm = () => {
           <option value="">Select Property Type</option>
           <option value="Apartment">Apartment</option>
           <option value="Condo">Condo</option>
+          <option value="Charlet">Charlet</option>
           <option value="House">House</option>
           <option value="CabinOrCottage">Cabin or Cottage</option>
           <option value="Room">Room</option>

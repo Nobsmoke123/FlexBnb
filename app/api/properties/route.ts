@@ -81,7 +81,7 @@ export const POST = async (request: Request) => {
     const result = await property.save();
 
     return Response.redirect(
-      `${process.env.NEXTAUTH_URL}/properties/${result._id}`
+      `${process.env.NEXTAUTH_URL}/properties/${result._id}?toast=Property added successfully`
     );
   } catch (error) {
     console.log(error);

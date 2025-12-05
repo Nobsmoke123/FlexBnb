@@ -95,10 +95,10 @@
     "type": "Condo",
     "description": "The Cozy Downtown Loft captures the lively spirit of New York City while offering a warm, intimate space to unwind. Located in the heart of downtown, this loft places you in one of the world’s most iconic urban environments. Its open-concept layout and city-view windows create a modern and uplifting atmosphere. Inside, the space blends functionality with style, featuring contemporary furnishings, soft lighting, and a stylish kitchen. It is designed for solo travelers, couples, or remote workers seeking comfort without sacrificing access to the city’s energy. Every corner of the loft is crafted to maximize space and enhance relaxation. Outside your door, the best of New York awaits. From world-class dining to entertainment, shopping, and transit links, you’ll have seamless access to everything the city offers. The Cozy Downtown Loft is ideal for guests wanting an authentic New York stay with convenience and comfort intertwined.",
     "location": {
-      "street": "500 Lux Lane",
-      "city": "Los Angeles",
+      "street": "Parthenia St",
+      "city": "Northridge",
       "state": "CA",
-      "zipcode": "90001"
+      "zipcode": "91343"
     },
     "beds": 3,
     "baths": 2,

@@ -7,7 +7,7 @@ const PropertyHeaderImage: React.FC<{ image: string }> = ({ image }) => {
         <Image
           src={image.startsWith("http") ? image : `/images/properties/${image}`}
           alt="property-image-header"
-          className="object-cover h-[45vh] w-[100vw]"
+          className="object-cover object-top h-[65vh] w-[100vw]"
           width={0}
           height={0}
           loading="eager"
