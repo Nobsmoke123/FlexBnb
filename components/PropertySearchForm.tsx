@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const PropertySearchForm = () => {
   const [locationInput, setLocationInput] = useState("");
-  const [propertyType, setPropertyType] = useState("");
+  const [propertyType, setPropertyType] = useState("All");
 
   const router = useRouter();
 
@@ -20,12 +20,15 @@ const PropertySearchForm = () => {
   };
 
   const handleFormSubmission = async (
-    _event: React.ChangeEvent<HTMLFormElement>
+    event: React.ChangeEvent<HTMLFormElement>
   ) => {
+    event.preventDefault();
     if (locationInput === "" && propertyType === "All") {
       router.push("/properties");
     } else {
-      const query = `?location=${locationInput}&propertyType=${propertyType}`;
+      const query = `?location=${encodeURIComponent(
+        locationInput
+      )}&propertyType=${encodeURIComponent(propertyType)}`;
       router.push(`/properties/searchResults${query}`);
     }
   };

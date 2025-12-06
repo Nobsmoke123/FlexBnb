@@ -29,7 +29,7 @@ const ShareButton: React.FC<{ property: Property }> = ({ property }) => {
           url={shareUrl}
           about={property.name}
           content={property.description}
-          hashtag={`$${property.type}ForRent`}
+          hashtag={`#${property.type}ForRent`}
         >
           <FacebookIcon className="size-10 rounded-full" />
         </FacebookShareButton>
