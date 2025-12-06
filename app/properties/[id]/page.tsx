@@ -71,7 +71,7 @@ const PropertyPage = () => {
               <aside className="md:basis-xs space-y-4">
                 <BookmarkButton property={property} />
 
-                <ShareButton />
+                <ShareButton property={property} />
 
                 {/* <!-- Contact Form --> */}
                 <PropertyContactForm />
