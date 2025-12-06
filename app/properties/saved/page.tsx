@@ -37,7 +37,7 @@ const SavedProperties = () => {
       <h1 className="text-2xl text-center text-zinc-800 font-semibold mb-4">
         Saved Properties
       </h1>
-      <div className="container-xl lg:container m-auto px-4 py-6 md:h-[100vh]">
+      <div className="container-xl lg:container m-auto px-4 py-6">
         {properties.length === 0 ? (
           <div className="h-[70vh] border-2 border-slate-300 flex flex-col items-center justify-center rounded-md">
             <HiHomeModern className="md:size-60" />

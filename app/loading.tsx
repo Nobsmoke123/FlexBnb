@@ -4,7 +4,7 @@ import { GridLoader } from "react-spinners";
 
 const Loading = () => {
   return (
-    <section className="w-[100vw] h-[100vh] flex justify-center items-center px-6 py-4">
+    <section className="w-[100vw] h-[100vh] flex justify-center items-center px-6 py-4 dark:bg-white">
       <GridLoader
         color="#1e67e5"
         loading={true}

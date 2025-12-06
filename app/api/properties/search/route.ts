@@ -1,7 +1,7 @@
 import connectDB from "@/config/database";
 import PropertyModel from "@/models/Property";
 
-export const POST = async (request: Request) => {
+export const GET = async (request: Request) => {
   try {
     await connectDB();
 
