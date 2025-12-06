@@ -52,6 +52,8 @@ const PropertyEditForm: React.FC<{ property: Property }> = ({ property }) => {
     images: [],
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const router = useRouter();
 
   const handleInputChange = (
@@ -437,8 +439,9 @@ const PropertyEditForm: React.FC<{ property: Property }> = ({ property }) => {
         <button
           className="bg-zinc-900 hover:bg-zinc-700 text-white font-semibold py-2 px-4 rounded-sm w-full focus:outline-none focus:shadow-outline"
           type="submit"
+          onClick={() => setIsLoading(true)}
         >
-          Update Property
+          {isLoading ? "Updating..." : "Update Property"}
         </button>
       </div>
     </form>

@@ -43,7 +43,6 @@ const PropertyMap: React.FC<{ property: Property }> = ({ property }) => {
         setLng(lng);
         setViewport((prev) => ({ ...prev, latitude: lat, longitude: lng }));
       } catch (error) {
-        console.log("The error is: ");
         console.log(error);
       } finally {
         setIsLoading(false);

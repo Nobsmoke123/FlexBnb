@@ -14,6 +14,8 @@ const PropertyAddForm = () => {
     ...PropertyAddFormBlankState,
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -396,8 +398,9 @@ const PropertyAddForm = () => {
         <button
           className="bg-zinc-900 hover:bg-zinc-700 text-white font-semibold py-2 px-4 rounded-sm w-full focus:outline-none focus:shadow-outline"
           type="submit"
+          onClick={() => setIsLoading(true)}
         >
-          Add Property
+          {isLoading ? "Submitting..." : "Add Property"}
         </button>
       </div>
     </form>

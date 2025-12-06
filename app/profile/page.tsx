@@ -93,11 +93,11 @@ const ProfilePage = () => {
                 />
               </div>
 
-              <h2 className="text-2xl mb-4">
+              <h2 className="text-xl mb-4">
                 <span className="font-light block">Name: </span>
                 {username}
               </h2>
-              <h2 className="text-2xl">
+              <h2 className="text-xl">
                 <span className="font-light block">Email: </span>
                 {email}
               </h2>
@@ -148,12 +148,12 @@ const ProfilePage = () => {
                       <div className="mt-2 flex gap-3">
                         <Link
                           href={`/properties/${property._id}/edit`}
-                          className="bg-zinc-500 text-white px-6 py-2 rounded-sm hover:bg-blue-600"
+                          className="bg-zinc-800 text-white px-6 py-2 rounded-sm hover:bg-blue-600"
                         >
                           Edit
                         </Link>
                         <button
-                          className="bg-zinc-500 text-white px-6 py-2 rounded-sm hover:bg-red-600"
+                          className="bg-zinc-800 text-white px-6 py-2 rounded-sm hover:bg-red-600"
                           type="button"
                           onClick={() =>
                             handleDeleteProperty(property._id.toString())
