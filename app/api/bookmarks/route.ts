@@ -16,7 +16,9 @@ export const GET = async (_request: Request) => {
 
     const { id: userId } = userSession;
 
-    const user = await UserModel.findOne({ _id: userId.toString() });
+    const user = await UserModel.findOne({ _id: userId.toString() }).populate(
+      "bookmarks"
+    );
 
     if (!user) {
       return new Response("User not found.", { status: 404 });
