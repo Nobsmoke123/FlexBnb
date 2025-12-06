@@ -8,9 +8,7 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
         <div className="mb-4 md:mb-0 flex flex-col items-center justify-center">
           <Image src={footerLogo} alt="logo" className="h-8 w-auto" />
-          <h1 className="text-sm font-semibold text-zinc-900">
-            PropertyPulse
-          </h1>
+          <h1 className="text-sm font-semibold text-zinc-900">FlexBnB</h1>
         </div>
         <div className="text-sm font-extralight flex flex-wrap justify-center md:justify-start mb-4 md:mb-0">
           <ul className="flex space-x-4">
@@ -24,8 +22,7 @@ const Footer = () => {
         </div>
         <div className="">
           <p className="text-sm font-extralight text-gray-900 mt-2 md:mt-0">
-            &copy; {new Date().getFullYear()} PropertyPulse. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} FlexBnB. All rights reserved.
           </p>
         </div>
       </div>

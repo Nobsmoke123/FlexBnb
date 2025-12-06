@@ -42,7 +42,7 @@ const SavedProperties = () => {
           <div className="h-[70vh] border-2 border-slate-300 flex flex-col items-center justify-center rounded-md">
             <HiHomeModern className="md:size-60" />
             <p className="text-zinc-800 text-2xl font-light text-center">
-              No save properties
+              No saved properties.
             </p>
           </div>
         ) : (
