@@ -29,7 +29,7 @@ const EditPropertyPage = () => {
   }, [id]);
 
   return (
-    <section className="bg-white">
+    <section className="bg-white dark:bg-white">
       <div className="container m-auto max-w-2xl py-20">
         <div className="bg-white px-6 py-8 mb-4 shadow-xl rounded-md border border-slate-200 m-4 md:m-0">
           {isLoading && <Loading />}

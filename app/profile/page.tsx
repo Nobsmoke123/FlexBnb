@@ -73,7 +73,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <section className="bg-white">
+    <section className="bg-white dark:bg-white">
       <div className="container m-auto py-24">
         <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border border-slate-200 m-4 md:m-0">
           <h1 className="text-4xl font-light text-center text-zinc-600 mb-4">

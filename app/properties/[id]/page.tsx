@@ -50,7 +50,7 @@ const PropertyPage = () => {
     property !== null && (
       <>
         <PropertyHeaderImage image={property?.images[0]} />
-        <section>
+        <section className="dark:bg-white">
           <div className="container m-auto py-6 px-6">
             <Link
               href={"/properties"}

@@ -33,7 +33,7 @@ const SavedProperties = () => {
   return isLoading ? (
     <Loading />
   ) : (
-    <section className="px-4 py-6">
+    <section className="px-4 py-6 dark:bg-white">
       <h1 className="text-2xl text-center text-zinc-800 font-semibold mb-4">
         Saved Properties
       </h1>

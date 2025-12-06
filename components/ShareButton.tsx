@@ -27,16 +27,17 @@ const ShareButton: React.FC<{ property: Property }> = ({ property }) => {
       <div className="flex gap-3 justify-center">
         <FacebookShareButton
           url={shareUrl}
-          about={property.name}
+          title={property.name}
           content={property.description}
           hashtag={`#${property.type}ForRent`}
+          
         >
           <FacebookIcon className="size-10 rounded-full" />
         </FacebookShareButton>
 
         <TelegramShareButton
           url={shareUrl}
-          about={property.name}
+          title={property.name}
           content={property.description}
         >
           <TelegramIcon className="size-10 rounded-full" />
@@ -44,7 +45,7 @@ const ShareButton: React.FC<{ property: Property }> = ({ property }) => {
 
         <WhatsappShareButton
           url={shareUrl}
-          about={property.name}
+          title={property.name}
           content={property.description}
         >
           <WhatsappIcon className="size-10 rounded-full" />
@@ -52,7 +53,7 @@ const ShareButton: React.FC<{ property: Property }> = ({ property }) => {
 
         <TwitterShareButton
           url={shareUrl}
-          about={property.name}
+          title={property.name}
           content={property.description}
         >
           <TwitterIcon className="size-10 rounded-full" />
