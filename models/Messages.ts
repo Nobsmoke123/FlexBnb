@@ -1,6 +1,7 @@
 import { Types, Schema, Model, models, model } from "mongoose";
 
 export interface Message {
+  _id: Types.ObjectId;
   sender: Types.ObjectId;
   receiver: Types.ObjectId;
   property: Types.ObjectId;
@@ -9,6 +10,8 @@ export interface Message {
   email: string;
   phone: string;
   message: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 const messageSchema = new Schema<Message, Model<Message>>(

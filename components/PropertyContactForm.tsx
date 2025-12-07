@@ -61,6 +61,8 @@ const PropertyContactForm: React.FC<{ property: Property }> = ({
         return;
       }
 
+      setFormData(() => ({ name: "", email: "", phone: "", message: "" }));
+
       toast.success("Message sent successfully.");
     } catch (error) {
       console.log(error);

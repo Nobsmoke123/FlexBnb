@@ -1,6 +1,6 @@
 import connectDB from "@/config/database";
 import MessageModel from "@/models/Messages";
-import { getUserSession } from "../auth/[...nextauth]/getUserSession";
+import { getUserSession } from "@/app/api/auth/[...nextauth]/getUserSession";
 import PropertyModel from "@/models/Property";
 
 // GET /api/messages
@@ -40,7 +40,16 @@ export const POST = async (request: Request) => {
 
     const { id: userId } = userSession;
 
-    const formData = await request.json();
+    const formData = await(
+      request.json() as Promise<{
+        name: string;
+        email: string;
+        phone: string;
+        message: string;
+        property: string;
+        receiver: string;
+      }>
+    );
 
     const property = await PropertyModel.findOne({ _id: formData.property });
 
