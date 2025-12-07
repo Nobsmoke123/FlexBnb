@@ -51,12 +51,17 @@ const authOptions: NextAuthOptions = {
     // Modifies the session object
     async session({ session }: { session: Session }) {
       await connectDB();
-      
+
       if (session.user) {
         const user = await UserModel.findOne({ email: session.user?.email! });
         session.user = { ...session?.user!, id: user?._id.toString() };
       }
       return session;
+    },
+
+    async jwt({ token }) {
+      await connectDB();
+      return token;
     },
   },
 };

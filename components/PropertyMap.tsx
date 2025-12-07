@@ -20,7 +20,6 @@ const PropertyMap: React.FC<{ property: Property }> = ({ property }) => {
     height: "500px",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [mapError, setMapError] = useState("");
 
   setDefaults({
     key: process.env.NEXT_PUBLIC_GOOGLE_GEOCODING_API_KEY!,

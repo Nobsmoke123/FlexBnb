@@ -1,25 +1,47 @@
 import mongoose from "mongoose";
 
-let connected = false;
+const MONGODB_URI = process.env.MONGODB_URI!;
+const DATABASE_NAME = process.env.MONGODB_DATABASE_NAME!;
+
+if (!MONGODB_URI) {
+  throw new Error("❌ Please define MONGODB_URI in .env");
+}
+
+if (!DATABASE_NAME) {
+  throw new Error("❌ Please define DATABASE_NAME in .env");
+}
+
+let cached = (global as any).mongoCache;
+
+if (!cached) {
+  cached = (global as any).mongoCache = {
+    conn: null,
+    promise: null,
+  };
+}
 
 const connectDB = async () => {
   try {
-    // if database is already connected, don't connect again
-    if (connected) {
-      console.log("The database is already connected.");
-      return;
+    if (cached.conn) {
+      console.info("Database is already connected.");
+      return cached.conn;
     }
 
-    await mongoose.connect(process.env.MONGODB_URI!, {
-      bufferCommands: false,
-    });
+    if (!cached.promise) {
+      cached.promise = mongoose.connect(MONGODB_URI, {
+        bufferCommands: false,
+        dbName: DATABASE_NAME,
+      });
+    }
 
-    connected = true;
+    cached.conn = await cached.promise;
 
-    console.log("MongoDB connected!");
+    return cached.conn;
   } catch (error) {
     console.error(error);
-    process.exit(1);
+    throw new Error("Failed to connect to database", {
+      cause: JSON.stringify(error),
+    });
   }
 };
 

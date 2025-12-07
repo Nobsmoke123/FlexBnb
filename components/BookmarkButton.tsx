@@ -2,7 +2,7 @@
 
 import { Property } from "@/models/Property";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 import { BiBookmarkMinus, BiBookmarkPlus } from "react-icons/bi";
 import { toast } from "react-toastify";
 
@@ -12,7 +12,7 @@ const BookmarkButton: React.FC<{ property: Property }> = ({ property }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [bookmarked, setBookmarked] = useState<boolean>(false);
 
-  const bookmarkProperty = async () => {
+  const bookmarkProperty: MouseEventHandler<HTMLButtonElement> = async () => {
     if (!userId) {
       toast.error("You need to sign in to bookmark a property.");
       return;
@@ -53,6 +53,9 @@ const BookmarkButton: React.FC<{ property: Property }> = ({ property }) => {
 
   useEffect(() => {
     const checkBookmarkStatus = async () => {
+      if (!userId) {
+        return;
+      }
       try {
         const response = await fetch("/api/bookmarks/check", {
           method: "POST",
