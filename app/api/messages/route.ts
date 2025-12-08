@@ -16,11 +16,22 @@ export const GET = async (_request: Request) => {
 
     const { id: userId } = userSession;
 
-    const messages = await MessageModel.find({ receiver: userId })
-      .populate("sender", "name")
-      .populate("property", "title");
+    const [unreadMessages, readMessages] = await Promise.all([
+      MessageModel.find({ receiver: userId, read: false })
+        .sort({ createdAt: -1 }) // sort in ASC order
+        .populate("sender", "name")
+        .populate("property", "title"),
 
-    return Response.json(messages, { status: 200 });
+      MessageModel.find({
+        receiver: userId,
+        read: true,
+      })
+        .sort({ createdAt: -1 }) // sort in ASC order
+        .populate("sender", "name")
+        .populate("property", "title"),
+    ]);
+
+    return Response.json([...unreadMessages, ...readMessages], { status: 200 });
   } catch (error) {
     console.log(error);
     return Response.json(error, { status: 500 });
