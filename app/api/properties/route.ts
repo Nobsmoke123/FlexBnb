@@ -4,11 +4,29 @@ import { getUserSession } from "@/app/api/auth/[...nextauth]/getUserSession";
 import { uploadImage } from "@/app/utils/upload";
 import { CloudinaryImageUploadResponse } from "@/app/types/CloudinaryImage";
 
-export const GET = async (_request: Request) => {
+export const GET = async (request: Request) => {
   try {
     await connectDB();
-    const properties = await PropertyModel.find({});
-    return new Response(JSON.stringify(properties), { status: 200 });
+
+    const { searchParams } = new URL(request.url);
+
+    const page = parseInt(searchParams.get("page") || "1");
+    const pageSize = parseInt(searchParams.get("pageSize") || "3");
+
+    const skip = Math.abs((page - 1) * pageSize);
+
+    const [total, properties] = await Promise.all([
+      PropertyModel.countDocuments({}),
+      PropertyModel.find({}).skip(skip).limit(pageSize),
+    ]);
+
+    return new Response(
+      JSON.stringify({
+        total,
+        properties,
+      }),
+      { status: 200 }
+    );
   } catch (error) {
     console.log(error);
     return new Response("Error", {
