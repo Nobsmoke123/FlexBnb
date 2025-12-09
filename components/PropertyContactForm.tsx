@@ -35,7 +35,7 @@ const PropertyContactForm: React.FC<{ property: Property }> = ({
     event.preventDefault();
 
     if (!userId) {
-      toast.error("You need to sign in to bookmark a property.");
+      toast.error("You need to sign in to send a message.");
       return;
     }
 
