@@ -9,6 +9,9 @@ export const metadata = {
   title: "FlexBnB | Find the perfect rental.",
   description: "Find your dream rental property.",
   keywords: "rental, find rentals, find properties",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 import "photoswipe/photoswipe.css";
@@ -19,12 +22,12 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <MessageProvider>
         <html lang="en">
           <head>
-            <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+            <link rel="icon" type="image/x-icon" href="/favicon.ico" />
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1.0"
             />
-            <title>PropertyPulse</title>
+            <title>FlexBnB</title>
           </head>
           <body>
             <Navbar />
