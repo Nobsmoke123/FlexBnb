@@ -2,6 +2,8 @@ import { fetchProperties } from "@/app/utils/requests";
 import FeaturedPropertyCard from "./FeaturedPropertyCard";
 import { Property } from "@/models/Property";
 
+export const dynamic = "force-dynamic";
+
 const FeaturedProperties = async () => {
   const { properties } = await fetchProperties({ showfeatured: true });
 
