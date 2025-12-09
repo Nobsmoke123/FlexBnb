@@ -1,5 +1,3 @@
-import type { Property } from "@/models/Property";
-
 export const getRateDisplay = (rates: {
   nightly?: number;
   weekly?: number;
