@@ -4,11 +4,13 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { MessageProvider } from "@/context/MessageContext";
 import { ToastContainer } from "react-toastify";
+
 export const metadata = {
-  title: "PropertyPulse | Find the perfect rental.",
+  title: "FlexBnB | Find the perfect rental.",
   description: "Find your dream rental property.",
   keywords: "rental, find rentals, find properties",
 };
+
 import "photoswipe/photoswipe.css";
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
