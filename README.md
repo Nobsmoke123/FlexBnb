@@ -2,6 +2,10 @@
 
 A modern, full-stack property rental platform built with Next.js. PropertyPulse allows users to browse, search, and manage property listings with an intuitive interface featuring interactive maps, image galleries, and seamless user authentication.
 
+**Live Preview:** [flex-bnb-sigma.vercel.app](https://flex-bnb-sigma.vercel.app/)
+
+---
+
 ## ✨ Features
 
 ### Property Management
@@ -33,7 +37,7 @@ A modern, full-stack property rental platform built with Next.js. PropertyPulse 
 ## 🛠️ Technologies Used
 
 ### Frontend
-- **Next.js 16.0.4** - React framework with App Router
+- **Next.js 16.0.7** - React framework with App Router
 - **React 19.2.0** - UI library
 - **TypeScript 5** - Type-safe JavaScript
 - **Tailwind CSS 4** - Utility-first CSS framework
