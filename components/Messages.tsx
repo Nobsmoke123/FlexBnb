@@ -3,6 +3,7 @@
 import { PopulatedMessage } from "@/app/types/PopulatedMessage";
 import { useState, useEffect } from "react";
 import { TbMessagesOff } from "react-icons/tb";
+
 import Loading from "./Loading";
 import Message from "./Message";
 

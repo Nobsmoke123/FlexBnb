@@ -1,5 +1,6 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import {
   createContext,
   Dispatch,
@@ -22,6 +23,7 @@ export const MessageProvider = ({
   children: React.ReactNode;
 }) => {
   const [count, setCount] = useState(0);
+  const { data: session } = useSession();
 
   useEffect(() => {
     const fetchUnreadMessagesCount = async () => {
@@ -32,12 +34,14 @@ export const MessageProvider = ({
           setCount(data);
         }
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     };
 
-    fetchUnreadMessagesCount();
-  }, []);
+    if (session?.user.id) {
+      fetchUnreadMessagesCount();
+    }
+  }, [session]);
 
   return (
     <MessageContext.Provider value={{ count, setCount }}>

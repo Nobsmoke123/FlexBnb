@@ -39,15 +39,6 @@ const PropertiesList = () => {
     setPage(() => value);
   };
 
-  console.log(
-    "The page is: ",
-    page,
-    " the pageSize is: ",
-    pageSize,
-    " The total is: ",
-    total
-  );
-
   return isLoading ? (
     <Loading />
   ) : (
