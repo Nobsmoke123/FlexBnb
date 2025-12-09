@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Property } from "@/models/Property";
 import { fetchProperties } from "@/app/utils/requests";
 const HomeProperties = async () => {
-  const { properties }: { properties: Property[] } = await fetchProperties();
+  const { properties }: { properties: Property[] } = await fetchProperties({});
 
   properties.sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()

@@ -20,10 +20,16 @@ export const fetchProperty = async (propertyId: string): Promise<Property> => {
 };
 
 
-export const fetchProperties = async (page = 0, pageSize = 3) => {
+export const fetchProperties = async ({
+  page = 0,
+  pageSize = 3,
+  showfeatured = false,
+}) => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_DOMAIN}/properties?page=${page}&pageSize=${pageSize}`
+      `${process.env.NEXT_PUBLIC_API_DOMAIN}/properties${
+        showfeatured ? "/featured" : ""
+      }?page=${page}&pageSize=${pageSize}`
     );
     if (!res.ok) {
       throw new Error("Failed to fetch properties.");

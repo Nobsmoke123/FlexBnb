@@ -1,4 +1,5 @@
 import type { PropertyCard } from "@/app/types/PropertyCard";
+import { getRateDisplay } from "@/app/utils/currencyDisplay";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,18 +11,6 @@ import {
 } from "react-icons/fa";
 
 const PropertyCard: React.FC<{ property: PropertyCard }> = ({ property }) => {
-  const getRateDisplay = () => {
-    const { rates } = property;
-
-    if (rates.monthly) {
-      return `${rates.monthly.toLocaleString()}/mo`;
-    } else if (rates.weekly) {
-      return `${rates.weekly.toLocaleString()}/wk`;
-    } else if (rates.nightly) {
-      return `${rates.nightly.toLocaleString()}/night`;
-    }
-  };
-
   return (
     <div className="rounded-xl shadow-md relative">
       <Image
@@ -47,7 +36,7 @@ const PropertyCard: React.FC<{ property: PropertyCard }> = ({ property }) => {
           </h3>
         </div>
         <h3 className="text-sm absolute top-[10px] right-[10px] bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right">
-          ${getRateDisplay()}
+          ${getRateDisplay(property.rates)}
         </h3>
         <div className="flex justify-between text-gray-500 mb-4">
           <p className="flex flex-col justify-center items-center gap-1">
@@ -72,7 +61,7 @@ const PropertyCard: React.FC<{ property: PropertyCard }> = ({ property }) => {
           </p>
         </div>
 
-        <div className="flex justify-between gap-4 text-green-900 text-sm mb-4">
+        <div className="md:hidden lg:flex flex justify-between gap-4 text-green-900 text-sm mb-4">
           {property.rates?.nightly && (
             <div className="flex justify-center items-center gap-2">
               <FaMoneyBill className="text-zinc-900 text-sm" />
@@ -98,7 +87,7 @@ const PropertyCard: React.FC<{ property: PropertyCard }> = ({ property }) => {
         <div className="border border-gray-100 mb-5"></div>
 
         <div className="flex flex-col lg:flex-row justify-between mb-4">
-          <div className="flex align-middle items-center gap-2 mb-4 lg:mb-0">
+          <div className="flex align-middle items-center md:justify-center gap-2 mb-4 lg:mb-0">
             <FaMapMarker className="text-orange-700" />
             <span className="text-zinc-700 text-base font-extralight">
               {property.location.city}
@@ -107,7 +96,7 @@ const PropertyCard: React.FC<{ property: PropertyCard }> = ({ property }) => {
           </div>
           <Link
             href={`/properties/${property._id}`}
-            className="h-[36px] bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center text-sm"
+            className="h-[36px] bg-zinc-600 hover:bg-zinc-800 font-semibold text-white px-4 py-2 rounded-sm text-center text-sm"
           >
             Details
           </Link>

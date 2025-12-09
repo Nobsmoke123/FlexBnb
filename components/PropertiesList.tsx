@@ -11,14 +11,14 @@ const PropertiesList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [properties, setProperties] = useState<Property[]>([]);
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(3);
+  const [pageSize, _setPageSize] = useState(3);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const fetchPropertyData = async () => {
       try {
         setIsLoading(true);
-        const data = await fetchProperties(page, pageSize);
+        const data = await fetchProperties({ page, pageSize });
         setProperties(() => data.properties);
         setTotal(() => data.total);
       } catch (error) {

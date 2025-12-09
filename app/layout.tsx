@@ -9,6 +9,7 @@ export const metadata = {
   description: "Find your dream rental property.",
   keywords: "rental, find rentals, find properties",
 };
+import "photoswipe/photoswipe.css";
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
