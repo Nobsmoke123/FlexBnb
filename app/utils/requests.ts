@@ -37,8 +37,8 @@ import { Property } from "@/models/Property";
    } catch (error) {
      console.log("The error is: ", error);
      console.log(error);
-     throw new Error("An error occured.", {
-       cause: JSON.stringify(error),
-     });
+      throw new Error("An error occured.", {
+        cause: JSON.stringify(error),
+      });
    }
  };
